@@ -15,7 +15,8 @@ namespace ReflectionBenchmark.NativeCall
 
         private readonly IScenario[] _scenarios = new IScenario[]
         {
-            new NativeCallScenario(), 
+            new NativeCallScenario(),
+            new NativeBackCallScenario(), 
         };
 
         /// <summary>

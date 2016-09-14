@@ -203,3 +203,86 @@ Scenario set "WinRT/COM calls"
 Direct call: run count = 100000000, totalTime(ms) = 875, time per run(microsec) = 0.0088
 WinRT/COM call: run count = 100000000, totalTime(ms) = 14203, time per run(microsec) = 0.1420, % to baseline = 1623.20%
 
+
+******* x64 Release *******
+
+CCW Calls
+=========================================
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+WinRT/COM call: run count = 100000000, totalTime(ms) = 3531, time per run(microsec) = 0.0353, % to baseline = 1739.41%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 2750, time per run(microsec) = 0.0275, % to baseline = 1354.68%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 204, time per run(microsec) = 0.0020
+WinRT/COM call: run count = 100000000, totalTime(ms) = 3578, time per run(microsec) = 0.0358, % to baseline = 1753.92%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 2750, time per run(microsec) = 0.0275, % to baseline = 1348.04%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+WinRT/COM call: run count = 100000000, totalTime(ms) = 3609, time per run(microsec) = 0.0361, % to baseline = 1777.83%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 2860, time per run(microsec) = 0.0286, % to baseline = 1408.87%
+
+******* x86 Release *******
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034
+WinRT/COM call: run count = 100000000, totalTime(ms) = 5281, time per run(microsec) = 0.0528, % to baseline = 1535.17%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 3141, time per run(microsec) = 0.0314, % to baseline = 913.08%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 343, time per run(microsec) = 0.0034
+WinRT/COM call: run count = 100000000, totalTime(ms) = 5157, time per run(microsec) = 0.0516, % to baseline = 1503.50%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 3062, time per run(microsec) = 0.0306, % to baseline = 892.71%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 343, time per run(microsec) = 0.0034
+WinRT/COM call: run count = 100000000, totalTime(ms) = 5110, time per run(microsec) = 0.0511, % to baseline = 1489.80%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 3016, time per run(microsec) = 0.0302, % to baseline = 879.30%
+
+******* x64 Debug *******
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 797, time per run(microsec) = 0.0080
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14422, time per run(microsec) = 0.1442, % to baseline = 1809.54%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 19469, time per run(microsec) = 0.1947, % to baseline = 2442.79%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 828, time per run(microsec) = 0.0083
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14516, time per run(microsec) = 0.1452, % to baseline = 1753.14%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 19953, time per run(microsec) = 0.1995, % to baseline = 2409.78%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 781, time per run(microsec) = 0.0078
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14375, time per run(microsec) = 0.1438, % to baseline = 1840.59%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 19406, time per run(microsec) = 0.1941, % to baseline = 2484.76%
+
+******* x86 Debug *******
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 859, time per run(microsec) = 0.0086
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14156, time per run(microsec) = 0.1416, % to baseline = 1647.96%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 20062, time per run(microsec) = 0.2006, % to baseline = 2335.51%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 812, time per run(microsec) = 0.0081
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14391, time per run(microsec) = 0.1439, % to baseline = 1772.29%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 20000, time per run(microsec) = 0.2000, % to baseline = 2463.05%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 828, time per run(microsec) = 0.0083
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14141, time per run(microsec) = 0.1414, % to baseline = 1707.85%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 19687, time per run(microsec) = 0.1969, % to baseline = 2377.66%

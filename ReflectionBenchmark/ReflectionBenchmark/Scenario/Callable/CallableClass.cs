@@ -1,11 +1,12 @@
-﻿using ReflectionBenchmark.DynamicCall;
+﻿using NativeComponent;
+using ReflectionBenchmark.DynamicCall;
 
 namespace ReflectionBenchmark.Callable
 {
     /// <summary>
     /// Callable class sample.
     /// </summary>
-    public sealed class CallableClass : ICallableInterface
+    public sealed class CallableClass : ICallableInterface, INativeCallable
     {
         private int _callNumber;
 
