@@ -129,3 +129,77 @@ Dynamic invoke call: run count = 1000000, totalTime(ms) = 2422, time per run(mic
 Switch dispatch call: run count = 1000000, totalTime(ms) = 78, time per run(microsec) = 0.0780, % to baseline = 925.27%
 Dictionary dispatch call: run count = 1000000, totalTime(ms) = 219, time per run(microsec) = 0.2190, % to baseline = 2597.86%
 
+
+
+NATIVE CALLS
+======================
+
+
+******* x64 Release *******
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+WinRT/COM call: run count = 100000000, totalTime(ms) = 3922, time per run(microsec) = 0.0392, % to baseline = 1932.02%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+WinRT/COM call: run count = 100000000, totalTime(ms) = 4000, time per run(microsec) = 0.0400, % to baseline = 1970.44%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 219, time per run(microsec) = 0.0022
+WinRT/COM call: run count = 100000000, totalTime(ms) = 4000, time per run(microsec) = 0.0400, % to baseline = 1826.48%
+
+******* x86 Release *******
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034
+WinRT/COM call: run count = 100000000, totalTime(ms) = 5547, time per run(microsec) = 0.0555, % to baseline = 1612.50%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 360, time per run(microsec) = 0.0036
+WinRT/COM call: run count = 100000000, totalTime(ms) = 5734, time per run(microsec) = 0.0573, % to baseline = 1592.78%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034
+WinRT/COM call: run count = 100000000, totalTime(ms) = 5547, time per run(microsec) = 0.0555, % to baseline = 1612.50%
+
+******* x64 Debug *******
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 813, time per run(microsec) = 0.0081
+WinRT/COM call: run count = 100000000, totalTime(ms) = 16047, time per run(microsec) = 0.1605, % to baseline = 1973.80%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 813, time per run(microsec) = 0.0081
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14781, time per run(microsec) = 0.1478, % to baseline = 1818.08%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 812, time per run(microsec) = 0.0081
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14594, time per run(microsec) = 0.1459, % to baseline = 1797.29%
+
+******* x86 Debug *******
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 844, time per run(microsec) = 0.0084
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14391, time per run(microsec) = 0.1439, % to baseline = 1705.09%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 813, time per run(microsec) = 0.0081
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14109, time per run(microsec) = 0.1411, % to baseline = 1735.42%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 875, time per run(microsec) = 0.0088
+WinRT/COM call: run count = 100000000, totalTime(ms) = 14203, time per run(microsec) = 0.1420, % to baseline = 1623.20%
+

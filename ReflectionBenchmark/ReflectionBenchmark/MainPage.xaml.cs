@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ReflectionBenchmark.DynamicCall;
+using ReflectionBenchmark.NativeCall;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -72,6 +73,11 @@ namespace ReflectionBenchmark
         private void DynamicCall_OnClick(object sender, RoutedEventArgs e)
         {
             RunScenarioSet(new DynamicCallScenarioSet());
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new NativeCallScenarioSet());
         }
     }
 }

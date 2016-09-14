@@ -1,4 +1,6 @@
-﻿namespace ReflectionBenchmark.DynamicCall
+﻿using ReflectionBenchmark.Callable;
+
+namespace ReflectionBenchmark.DynamicCall
 {
     /// <summary>
     /// Dictionary dispatch call.

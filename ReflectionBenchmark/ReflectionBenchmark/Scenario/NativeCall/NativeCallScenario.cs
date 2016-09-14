@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
+using NativeComponent;
+using ReflectionBenchmark.DynamicCall;
 
-namespace ReflectionBenchmark.DynamicCall
+namespace ReflectionBenchmark.NativeCall
 {
     /// <summary>
-    /// Simple call scenario.
+    /// WinRT/COM call scenario.
     /// </summary>
-    public sealed class SimpleCallScenario : IScenario
+    public sealed class NativeCallScenario : IScenario
     {
-        public string ScenarioName => "Direct call";
+        public string ScenarioName => "WinRT/COM call";
 
         public async Task<BenchmarkResult> DoBenchmark()
         {
@@ -18,15 +20,15 @@ namespace ReflectionBenchmark.DynamicCall
 
         private BenchmarkResult RunBenchmark()
         {
-            var callable = new CallableClass();
+            INativeCallable callable = new NativeCallable();
             var ticks1 = Environment.TickCount;
-            for (var i = 0; i < Consts.RunCount*100; i++)
+            for (var i = 0; i < Consts.RunCount * 100; i++)
             {
                 callable.Run();
                 callable.RunWithArgs(i, "");
             }
             var ticks2 = Environment.TickCount;
-            return new BenchmarkResult() { RunCount = Consts.RunCount*100, Milliseconds = ticks2 - ticks1};
+            return new BenchmarkResult() { RunCount = Consts.RunCount * 100, Milliseconds = ticks2 - ticks1 };
         }
     }
 }

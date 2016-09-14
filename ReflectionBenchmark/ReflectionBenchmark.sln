@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionBenchmark", "ReflectionBenchmark\ReflectionBenchmark.csproj", "{308EEFB3-6E83-446F-8705-1D72BFB05B16}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeComponent", "NativeComponent\NativeComponent.vcxproj", "{4EAA86CC-92BD-4F51-9EBD-101009CC4738}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -33,6 +35,18 @@ Global
 		{308EEFB3-6E83-446F-8705-1D72BFB05B16}.Release|x86.ActiveCfg = Release|x86
 		{308EEFB3-6E83-446F-8705-1D72BFB05B16}.Release|x86.Build.0 = Release|x86
 		{308EEFB3-6E83-446F-8705-1D72BFB05B16}.Release|x86.Deploy.0 = Release|x86
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Debug|ARM.Build.0 = Debug|ARM
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Debug|x64.ActiveCfg = Debug|x64
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Debug|x64.Build.0 = Debug|x64
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Debug|x86.ActiveCfg = Debug|Win32
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Debug|x86.Build.0 = Debug|Win32
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Release|ARM.ActiveCfg = Release|ARM
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Release|ARM.Build.0 = Release|ARM
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Release|x64.ActiveCfg = Release|x64
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Release|x64.Build.0 = Release|x64
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Release|x86.ActiveCfg = Release|Win32
+		{4EAA86CC-92BD-4F51-9EBD-101009CC4738}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
-﻿using System.Threading;
+﻿using ReflectionBenchmark.DynamicCall;
 
-namespace ReflectionBenchmark.DynamicCall
+namespace ReflectionBenchmark.Callable
 {
     /// <summary>
     /// Callable class sample.

@@ -100,7 +100,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario\BenchmarkResult.cs" />
-    <Compile Include="Scenario\DynamicCall\CallableClass.cs" />
+    <Compile Include="Scenario\Callable\CallableClass.cs" />
     <Compile Include="Scenario\DynamicCall\CallableCaseDispatcher.cs" />
     <Compile Include="Scenario\DynamicCall\CallableDictionaryDispatcher.cs" />
     <Compile Include="Scenario\DynamicCall\Consts.cs" />
@@ -109,12 +109,14 @@
     <Compile Include="Scenario\DynamicCall\DynamicCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\DynamicCallScenarioSet.cs" />
     <Compile Include="Scenario\DynamicCall\Empty.cs" />
-    <Compile Include="Scenario\DynamicCall\ICallableInterface.cs" />
+    <Compile Include="Scenario\Callable\ICallableInterface.cs" />
     <Compile Include="Scenario\DynamicCall\IDispatcherProxy.cs" />
     <Compile Include="Scenario\DynamicCall\InterfaceCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionDelegateCallScenario.cs" />
-    <Compile Include="Scenario\DynamicCall\SimpleCallScenario.cs" />
+    <Compile Include="Scenario\NativeCall\NativeCallScenario.cs" />
+    <Compile Include="Scenario\NativeCall\NativeCallScenarioSet.cs" />
+    <Compile Include="Scenario\StaticCall\SimpleCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\SwitchDispatchCallScenario.cs" />
     <Compile Include="Scenario\IScenario.cs" />
     <Compile Include="Scenario\IScenarioSet.cs" />
@@ -144,6 +146,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NativeComponent\NativeComponent.vcxproj">
+      <Project>{4eaa86cc-92bd-4f51-9ebd-101009cc4738}</Project>
+      <Name>NativeComponent</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ReflectionBenchmark.StaticCall;
 
 namespace ReflectionBenchmark.DynamicCall
 {

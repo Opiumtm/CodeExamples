@@ -1,4 +1,4 @@
-﻿namespace ReflectionBenchmark.DynamicCall
+﻿namespace ReflectionBenchmark.Callable
 {
     /// <summary>
     /// Callable interface.

@@ -15,6 +15,7 @@
         <TextBox FontFamily="Consolas" TextWrapping="Wrap" IsReadOnly="True" x:Name="ConsoleBox" />
         <VariableSizedWrapGrid Grid.Row="1" Orientation="Horizontal" Margin="5">
             <Button Margin="2.5" Click="DynamicCall_OnClick">Dynmic call</Button>
+            <Button Margin="2.5" Click="ButtonBase_OnClick">WinRT/COM call</Button>
         </VariableSizedWrapGrid>
     </Grid>
 </Page>
