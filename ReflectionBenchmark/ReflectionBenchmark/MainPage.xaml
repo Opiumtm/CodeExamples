@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="ReflectionBenchmark.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ReflectionBenchmark"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox FontFamily="Consolas" TextWrapping="Wrap" IsReadOnly="True" x:Name="ConsoleBox" />
+        <VariableSizedWrapGrid Grid.Row="1" Orientation="Horizontal" Margin="5">
+            <Button Margin="2.5" Click="DynamicCall_OnClick">Dynmic call</Button>
+        </VariableSizedWrapGrid>
+    </Grid>
+</Page>
