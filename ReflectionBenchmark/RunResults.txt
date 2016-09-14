@@ -1,0 +1,131 @@
+Benchmark results
+
+******* x64 Release *******
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+Interface cast call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034, % to baseline = 169.46%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 297, time per run(microsec) = 0.2970, % to baseline = 14630.54%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 15, time per run(microsec) = 0.0150, % to baseline = 738.92%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 6125, time per run(microsec) = 6.1250, % to baseline = 301724.14%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 63, time per run(microsec) = 0.0630, % to baseline = 3103.45%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 125, time per run(microsec) = 0.1250, % to baseline = 6157.64%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+Interface cast call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034, % to baseline = 169.46%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 281, time per run(microsec) = 0.2810, % to baseline = 13842.36%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 16, time per run(microsec) = 0.0160, % to baseline = 788.18%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 6547, time per run(microsec) = 6.5470, % to baseline = 322512.32%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 78, time per run(microsec) = 0.0780, % to baseline = 3842.36%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 156, time per run(microsec) = 0.1560, % to baseline = 7684.73%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+Interface cast call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034, % to baseline = 169.46%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 312, time per run(microsec) = 0.3120, % to baseline = 15369.46%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 0, time per run(microsec) = 0.0000, % to baseline = 0.00%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 6625, time per run(microsec) = 6.6250, % to baseline = 326354.68%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 79, time per run(microsec) = 0.0790, % to baseline = 3891.63%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 140, time per run(microsec) = 0.1400, % to baseline = 6896.55%
+
+******* x86 Release *******
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 343, time per run(microsec) = 0.0034
+Interface cast call: run count = 100000000, totalTime(ms) = 375, time per run(microsec) = 0.0038, % to baseline = 109.33%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 282, time per run(microsec) = 0.2820, % to baseline = 8221.57%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 15, time per run(microsec) = 0.0150, % to baseline = 437.32%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 5328, time per run(microsec) = 5.3280, % to baseline = 155335.28%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 47, time per run(microsec) = 0.0470, % to baseline = 1370.26%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 125, time per run(microsec) = 0.1250, % to baseline = 3644.31%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034
+Interface cast call: run count = 100000000, totalTime(ms) = 375, time per run(microsec) = 0.0038, % to baseline = 109.01%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 281, time per run(microsec) = 0.2810, % to baseline = 8168.60%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 16, time per run(microsec) = 0.0160, % to baseline = 465.12%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 5500, time per run(microsec) = 5.5000, % to baseline = 159883.72%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 47, time per run(microsec) = 0.0470, % to baseline = 1366.28%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 140, time per run(microsec) = 0.1400, % to baseline = 4069.77%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034
+Interface cast call: run count = 100000000, totalTime(ms) = 359, time per run(microsec) = 0.0036, % to baseline = 104.36%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 297, time per run(microsec) = 0.2970, % to baseline = 8633.72%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 16, time per run(microsec) = 0.0160, % to baseline = 465.12%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 5375, time per run(microsec) = 5.3750, % to baseline = 156250.00%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 47, time per run(microsec) = 0.0470, % to baseline = 1366.28%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 140, time per run(microsec) = 0.1400, % to baseline = 4069.77%
+
+******* x64 Debug *******
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 828, time per run(microsec) = 0.0083
+Interface cast call: run count = 100000000, totalTime(ms) = 2156, time per run(microsec) = 0.0216, % to baseline = 260.39%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 1234, time per run(microsec) = 1.2340, % to baseline = 14903.38%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 31, time per run(microsec) = 0.0310, % to baseline = 374.40%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 2782, time per run(microsec) = 2.7820, % to baseline = 33599.03%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 93, time per run(microsec) = 0.0930, % to baseline = 1123.19%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 250, time per run(microsec) = 0.2500, % to baseline = 3019.32%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 828, time per run(microsec) = 0.0083
+Interface cast call: run count = 100000000, totalTime(ms) = 2140, time per run(microsec) = 0.0214, % to baseline = 258.45%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 1219, time per run(microsec) = 1.2190, % to baseline = 14722.22%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 31, time per run(microsec) = 0.0310, % to baseline = 374.40%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 2360, time per run(microsec) = 2.3600, % to baseline = 28502.42%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 109, time per run(microsec) = 0.1090, % to baseline = 1316.43%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 250, time per run(microsec) = 0.2500, % to baseline = 3019.32%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 828, time per run(microsec) = 0.0083
+Interface cast call: run count = 100000000, totalTime(ms) = 2172, time per run(microsec) = 0.0217, % to baseline = 262.32%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 1250, time per run(microsec) = 1.2500, % to baseline = 15096.62%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 32, time per run(microsec) = 0.0320, % to baseline = 386.47%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 2406, time per run(microsec) = 2.4060, % to baseline = 29057.97%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 94, time per run(microsec) = 0.0940, % to baseline = 1135.27%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 250, time per run(microsec) = 0.2500, % to baseline = 3019.32%
+
+
+******* x86 Debug *******
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 813, time per run(microsec) = 0.0081
+Interface cast call: run count = 100000000, totalTime(ms) = 1407, time per run(microsec) = 0.0141, % to baseline = 173.06%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 1375, time per run(microsec) = 1.3750, % to baseline = 16912.67%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 15, time per run(microsec) = 0.0150, % to baseline = 184.50%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 2734, time per run(microsec) = 2.7340, % to baseline = 33628.54%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 94, time per run(microsec) = 0.0940, % to baseline = 1156.21%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 218, time per run(microsec) = 0.2180, % to baseline = 2681.43%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 844, time per run(microsec) = 0.0084
+Interface cast call: run count = 100000000, totalTime(ms) = 1297, time per run(microsec) = 0.0130, % to baseline = 153.67%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 1328, time per run(microsec) = 1.3280, % to baseline = 15734.60%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 16, time per run(microsec) = 0.0160, % to baseline = 189.57%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 2375, time per run(microsec) = 2.3750, % to baseline = 28139.81%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 93, time per run(microsec) = 0.0930, % to baseline = 1101.90%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 219, time per run(microsec) = 0.2190, % to baseline = 2594.79%
+
+Scenario set "Dynamic calls"
+=======================================================
+Direct call: run count = 100000000, totalTime(ms) = 843, time per run(microsec) = 0.0084
+Interface cast call: run count = 100000000, totalTime(ms) = 1344, time per run(microsec) = 0.0134, % to baseline = 159.43%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 1360, time per run(microsec) = 1.3600, % to baseline = 16132.86%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 31, time per run(microsec) = 0.0310, % to baseline = 367.73%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 2422, time per run(microsec) = 2.4220, % to baseline = 28730.72%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 78, time per run(microsec) = 0.0780, % to baseline = 925.27%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 219, time per run(microsec) = 0.2190, % to baseline = 2597.86%
+
