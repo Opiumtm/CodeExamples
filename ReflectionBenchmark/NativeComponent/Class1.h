@@ -33,4 +33,22 @@ namespace NativeComponent
 		NativeCaller();
 		virtual void Invoke(INativeCallable^ callable, int count);
 	};
+
+	public interface class IBenchmarkRunner
+	{
+	public:
+		void Run(int count);
+	};
+
+	public ref class BubbleSortRunner sealed : public IBenchmarkRunner
+	{
+	private:
+		void DoSort();
+		void Swap(int *a, int *b);
+		void BubbleSort(std::vector<int> array);
+		std::vector<int> data;
+	public:
+		BubbleSortRunner();
+		virtual void Run(int count);
+	};
 }

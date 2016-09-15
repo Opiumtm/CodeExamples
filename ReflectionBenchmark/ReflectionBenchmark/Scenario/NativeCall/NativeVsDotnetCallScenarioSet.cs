@@ -6,17 +6,16 @@ namespace ReflectionBenchmark.NativeCall
     /// <summary>
     /// WinRT/COM call scenario set.
     /// </summary>
-    public class NativeCallScenarioSet : IScenarioSet
+    public class NativeVsDotnetCallScenarioSet : IScenarioSet
     {
-        public string Name => "WinRT/COM calls";
+        public string Name => "C++ native vs .NET call";
 
-        public IScenario BaselineScenario { get; } = new SimpleCallScenario();
+        public IScenario BaselineScenario { get; } = new CppNativeCallScenario();
 
 
         private readonly IScenario[] _scenarios = new IScenario[]
         {
-            new NativeCallScenario(),
-            new NativeBackCallScenario(), 
+            new SimpleCallScenario(), 
         };
 
         /// <summary>

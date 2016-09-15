@@ -99,6 +99,11 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenario\Algorithms\BubleSortScenarioSet.cs" />
+    <Compile Include="Scenario\Algorithms\BenchmarkRunnerScenarioBase.cs" />
+    <Compile Include="Scenario\Algorithms\BubbleSortDotnetScenario.cs" />
+    <Compile Include="Scenario\Algorithms\BubbleSortNativeScenario.cs" />
+    <Compile Include="Scenario\Algorithms\DotNetBubbleSortRunner.cs" />
     <Compile Include="Scenario\BenchmarkResult.cs" />
     <Compile Include="Scenario\Callable\CallableClass.cs" />
     <Compile Include="Scenario\DynamicCall\CallableCaseDispatcher.cs" />
@@ -118,6 +123,7 @@
     <Compile Include="Scenario\NativeCall\NativeBackCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeCallScenarioSet.cs" />
+    <Compile Include="Scenario\NativeCall\NativeVsDotnetCallScenarioSet.cs" />
     <Compile Include="Scenario\StaticCall\SimpleCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\SwitchDispatchCallScenario.cs" />
     <Compile Include="Scenario\IScenario.cs" />

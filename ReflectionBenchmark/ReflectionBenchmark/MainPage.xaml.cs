@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ReflectionBenchmark.Algorithms;
 using ReflectionBenchmark.DynamicCall;
 using ReflectionBenchmark.NativeCall;
 
@@ -83,6 +84,11 @@ namespace ReflectionBenchmark
         private void CppVsNet_OnClick(object sender, RoutedEventArgs e)
         {
             RunScenarioSet(new NativeVsDotnetCallScenarioSet());
+        }
+
+        private void BubbleSort_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new BubleSortScenarioSet());
         }
     }
 }

@@ -325,3 +325,75 @@ Scenario set "C++ native vs .NET call"
 =======================================================
 C++ pure native call: run count = 100000000, totalTime(ms) = 672, time per run(microsec) = 0.0067
 .NET direct call: run count = 100000000, totalTime(ms) = 344, time per run(microsec) = 0.0034, % to baseline = 51.19%
+
+
+Bubble sort
+================================
+
+******* x64 Release *******
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 500, totalTime(ms) = 10203, time per run(microsec) = 20406.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 7422, time per run(microsec) = 14844.0000, % to baseline = 72.74%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 500, totalTime(ms) = 10625, time per run(microsec) = 21250.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 7656, time per run(microsec) = 15312.0000, % to baseline = 72.06%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 500, totalTime(ms) = 10234, time per run(microsec) = 20468.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 7719, time per run(microsec) = 15438.0000, % to baseline = 75.43%
+
+******* x86 Release *******
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 500, totalTime(ms) = 8750, time per run(microsec) = 17500.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 7563, time per run(microsec) = 15126.0000, % to baseline = 86.43%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 500, totalTime(ms) = 8766, time per run(microsec) = 17532.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 7578, time per run(microsec) = 15156.0000, % to baseline = 86.45%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 500, totalTime(ms) = 8797, time per run(microsec) = 17594.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 7609, time per run(microsec) = 15218.0000, % to baseline = 86.50%
+
+******* x64 Debug *******
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 1, totalTime(ms) = 12468, time per run(microsec) = 12468000.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 43406, time per run(microsec) = 86812.0000, % to baseline = 0.70%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 1, totalTime(ms) = 12625, time per run(microsec) = 12625000.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 43031, time per run(microsec) = 86062.0000, % to baseline = 0.68%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 1, totalTime(ms) = 12672, time per run(microsec) = 12672000.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 43609, time per run(microsec) = 87218.0000, % to baseline = 0.69%
+
+******* x86 Debug *******
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 1, totalTime(ms) = 12375, time per run(microsec) = 12375000.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 35343, time per run(microsec) = 70686.0000, % to baseline = 0.57%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 1, totalTime(ms) = 12328, time per run(microsec) = 12328000.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 34906, time per run(microsec) = 69812.0000, % to baseline = 0.57%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 1, totalTime(ms) = 12234, time per run(microsec) = 12234000.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 35594, time per run(microsec) = 71188.0000, % to baseline = 0.58%
