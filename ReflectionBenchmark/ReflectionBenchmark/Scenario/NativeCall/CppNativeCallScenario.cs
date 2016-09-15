@@ -1,17 +1,16 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using NativeComponent;
-using ReflectionBenchmark.Callable;
 using ReflectionBenchmark.DynamicCall;
 
 namespace ReflectionBenchmark.NativeCall
 {
     /// <summary>
-    /// WinRT/COM back call scenario.
+    /// Pure native C++ call scenario.
     /// </summary>
-    public sealed class NativeBackCallScenario : IScenario
+    public sealed class CppNativeCallScenario : IScenario
     {
-        public string ScenarioName => "WinRT/COM back CCW call";
+        public string ScenarioName => "C++ pure native call";
 
         public async Task<BenchmarkResult> DoBenchmark()
         {
@@ -22,7 +21,7 @@ namespace ReflectionBenchmark.NativeCall
         private BenchmarkResult RunBenchmark()
         {
             INativeCaller caller = new NativeCaller();
-            INativeCallable callable = new CallableClass();
+            INativeCallable callable = new NativeCallable();
             var ticks1 = Environment.TickCount;
             caller.Invoke(callable, Consts.RunCount * 100);
             var ticks2 = Environment.TickCount;

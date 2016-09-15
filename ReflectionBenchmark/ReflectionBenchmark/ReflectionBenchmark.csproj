@@ -114,6 +114,7 @@
     <Compile Include="Scenario\DynamicCall\InterfaceCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionDelegateCallScenario.cs" />
+    <Compile Include="Scenario\NativeCall\CppNativeCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeBackCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeCallScenarioSet.cs" />
