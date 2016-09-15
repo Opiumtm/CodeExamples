@@ -79,5 +79,10 @@ namespace ReflectionBenchmark
         {
             RunScenarioSet(new NativeCallScenarioSet());
         }
+
+        private void CppVsNet_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new NativeVsDotnetCallScenarioSet());
+        }
     }
 }

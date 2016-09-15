@@ -10,7 +10,7 @@ namespace ReflectionBenchmark.StaticCall
     /// </summary>
     public sealed class SimpleCallScenario : IScenario
     {
-        public string ScenarioName => "Direct call";
+        public string ScenarioName => ".NET direct call";
 
         public async Task<BenchmarkResult> DoBenchmark()
         {
