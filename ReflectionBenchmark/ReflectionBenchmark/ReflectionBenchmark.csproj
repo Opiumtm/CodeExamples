@@ -128,6 +128,14 @@
     <Compile Include="Scenario\DynamicCall\SwitchDispatchCallScenario.cs" />
     <Compile Include="Scenario\IScenario.cs" />
     <Compile Include="Scenario\IScenarioSet.cs" />
+    <Compile Include="Scenario\WeakEvents\DvachBrowserWeakEventChannelScenario.cs" />
+    <Compile Include="Scenario\WeakEvents\DvachBrowser\WeakEventChannel.cs" />
+    <Compile Include="Scenario\WeakEvents\IWeakEventCallback.cs" />
+    <Compile Include="Scenario\WeakEvents\IWeakEventChannel.cs" />
+    <Compile Include="Scenario\WeakEvents\LockDicWeakEventChannelScenario.cs" />
+    <Compile Include="Scenario\WeakEvents\LockDic\WeakEventChannel.cs" />
+    <Compile Include="Scenario\WeakEvents\WeakChannelScenarioSet.cs" />
+    <Compile Include="Scenario\WeakEvents\WeakEventChannelScenarioBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -161,6 +169,7 @@
       <Name>NativeComponent</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

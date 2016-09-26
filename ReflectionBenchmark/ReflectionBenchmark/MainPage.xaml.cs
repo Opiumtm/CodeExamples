@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using ReflectionBenchmark.Algorithms;
 using ReflectionBenchmark.DynamicCall;
 using ReflectionBenchmark.NativeCall;
+using ReflectionBenchmark.WeakEvents;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -89,6 +90,11 @@ namespace ReflectionBenchmark
         private void BubbleSort_OnClick(object sender, RoutedEventArgs e)
         {
             RunScenarioSet(new BubleSortScenarioSet());
+        }
+
+        private void WeakEvents_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new WeakChannelScenarioSet());
         }
     }
 }

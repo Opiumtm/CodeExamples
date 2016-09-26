@@ -397,3 +397,34 @@ Scenario set "C++ native vs .NET bubble sort"
 =======================================================
 C++ bubble sort: run count = 1, totalTime(ms) = 12234, time per run(microsec) = 12234000.0000
 .NET bubble sort: run count = 500, totalTime(ms) = 35594, time per run(microsec) = 71188.0000, % to baseline = 0.58%
+
+
+
+
+******** Release x64 JIT *******
+
+Scenario set "Dynamic calls"
+=======================================================
+.NET direct call: run count = 100000000, totalTime(ms) = 375, time per run(microsec) = 0.0038
+Interface cast call: run count = 100000000, totalTime(ms) = 797, time per run(microsec) = 0.0080, % to baseline = 212.53%
+Reflection invoke call: run count = 1000000, totalTime(ms) = 1219, time per run(microsec) = 1.2190, % to baseline = 32506.67%
+Reflection cached delegate invoke call: run count = 1000000, totalTime(ms) = 0, time per run(microsec) = 0.0000, % to baseline = 0.00%
+Dynamic invoke call: run count = 1000000, totalTime(ms) = 2125, time per run(microsec) = 2.1250, % to baseline = 56666.67%
+Switch dispatch call: run count = 1000000, totalTime(ms) = 47, time per run(microsec) = 0.0470, % to baseline = 1253.33%
+Dictionary dispatch call: run count = 1000000, totalTime(ms) = 188, time per run(microsec) = 0.1880, % to baseline = 5013.33%
+
+Scenario set "WinRT/COM calls"
+=======================================================
+.NET direct call: run count = 100000000, totalTime(ms) = 391, time per run(microsec) = 0.0039
+WinRT/COM call: run count = 100000000, totalTime(ms) = 6282, time per run(microsec) = 0.0628, % to baseline = 1606.65%
+WinRT/COM back CCW call: run count = 100000000, totalTime(ms) = 6719, time per run(microsec) = 0.0672, % to baseline = 1718.41%
+
+Scenario set "C++ native vs .NET call"
+=======================================================
+C++ pure native call: run count = 100000000, totalTime(ms) = 422, time per run(microsec) = 0.0042
+.NET direct call: run count = 100000000, totalTime(ms) = 375, time per run(microsec) = 0.0038, % to baseline = 88.86%
+
+Scenario set "C++ native vs .NET bubble sort"
+=======================================================
+C++ bubble sort: run count = 500, totalTime(ms) = 10187, time per run(microsec) = 20374.0000
+.NET bubble sort: run count = 500, totalTime(ms) = 8984, time per run(microsec) = 17968.0000, % to baseline = 88.19%

@@ -18,6 +18,7 @@
             <Button Margin="2.5" Click="ButtonBase_OnClick">WinRT/COM call</Button>
             <Button Margin="2.5" Click="CppVsNet_OnClick">C++ vs .NET</Button>
             <Button Margin="2.5" Click="BubbleSort_OnClick">Bubble sort</Button>
+            <Button Margin="2.5" Click="WeakEvents_OnClick">Weak events</Button>
         </VariableSizedWrapGrid>
     </Grid>
 </Page>
