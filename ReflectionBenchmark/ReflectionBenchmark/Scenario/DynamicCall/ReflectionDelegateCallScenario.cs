@@ -25,12 +25,12 @@ namespace ReflectionBenchmark.DynamicCall
             Func<int> cache1 = null;
             Func<int, string, int> cache2 = null;
 
-            for (var i = 0; i < Consts.RunCount; i++)
+            for (var i = 0; i < Consts.RunCount * 100; i++)
             {
                 CallReflection(callable, i, ref cache1, ref cache2);
             }
             var ticks2 = Environment.TickCount;
-            return new BenchmarkResult() { RunCount = Consts.RunCount, Milliseconds = ticks2 - ticks1 };
+            return new BenchmarkResult() { RunCount = Consts.RunCount*100, Milliseconds = ticks2 - ticks1 };
         }
 
         private static readonly TypeInfo InterfaceTypeInfo = typeof(ICallableInterface).GetTypeInfo();

@@ -19,7 +19,7 @@ namespace ReflectionBenchmark.DynamicCall
 
         private BenchmarkResult RunBenchmark()
         {
-            ICallableInterface callable = new CallableClass();
+            dynamic callable = new CallableClass();
             var ticks1 = Environment.TickCount;
             for (var i = 0; i < Consts.RunCount; i++)
             {
