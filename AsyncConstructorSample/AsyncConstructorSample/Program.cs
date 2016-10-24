@@ -15,7 +15,7 @@ namespace AsyncConstructorSample
             // var test = await new AsyncConstructedClass(3);
             // Would translate to code below:
             Task _asyncToken;
-            var test = new AsyncConstructedClass(out _asyncToken, 3);
+            var test = new AsyncConstructedClass2(out _asyncToken, 3);
             await _asyncToken;
             test.HelloWorld();
         }
@@ -50,6 +50,20 @@ namespace AsyncConstructorSample
         public void HelloWorld()
         {
             Console.WriteLine($"I'm constructed asynchronously with {_sleepSec} sec wait");
+        }
+    }
+
+    public class AsyncConstructedClass2 : AsyncConstructedClass
+    {
+        public AsyncConstructedClass2(out Task _asyncToken, int sleepSec) : base(out _asyncToken, sleepSec)
+        {
+            Func<Task, Task> _localMethod = async _ =>
+            {
+                await _;
+                Console.WriteLine("And one more second...");
+                await Task.Delay(TimeSpan.FromSeconds(1));
+            };
+            _asyncToken = _localMethod(_asyncToken);
         }
     }
 }
