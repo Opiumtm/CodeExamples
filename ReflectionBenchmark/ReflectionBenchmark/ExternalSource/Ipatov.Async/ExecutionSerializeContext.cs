@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,23 +25,22 @@ namespace Ipatov.Async
         /// </summary>
         /// <param name="action">Action to execute.</param>
         /// <param name="cancellationToken">Cancellation token.</param>
-        /// <param name="taskScheduler">Task scheduler.</param>
-        /// <param name="scheduleSync">Schedule synchronously.</param>
         /// <returns>Task to wait.</returns>
-        public Task Execute(Action action, CancellationToken cancellationToken, TaskScheduler taskScheduler, bool scheduleSync = false)
+        public async Task Execute(Action action, CancellationToken cancellationToken)
         {
-            var options = scheduleSync ? TaskContinuationOptions.ExecuteSynchronously : TaskContinuationOptions.None;
             var tcs = new TaskCompletionSource<Nothing>();
+            var cancel = new TaskCompletionSource<Nothing>();
+            cancellationToken.Register(() => cancel.TrySetCanceled());
             var oldTask = Interlocked.Exchange(ref _currentTask, tcs.Task);
-            oldTask.ContinueWith(t =>
+            try
+            {
+                await Task.WhenAny(oldTask, cancel.Task);
+                action?.Invoke();
+            }
+            finally
             {
                 tcs.SetResult(Nothing.Value);
-            }, CancellationToken.None, options, taskScheduler);
-            return oldTask.ContinueWith(t =>
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                action?.Invoke();
-            }, cancellationToken, options, taskScheduler);
+            }
         }
 
         /// <summary>
@@ -48,22 +48,22 @@ namespace Ipatov.Async
         /// </summary>
         /// <param name="action">Action to execute.</param>
         /// <param name="cancellationToken">Cancellation token.</param>
-        /// <param name="scheduleSync">Schedule synchronously.</param>
         /// <returns>Task to wait.</returns>
-        public Task Execute(Action action, CancellationToken cancellationToken, bool scheduleSync = false)
+        public async Task Execute(Task action, CancellationToken cancellationToken)
         {
-            return Execute(action, cancellationToken, TaskScheduler.Current, scheduleSync);
-        }
-
-        /// <summary>
-        /// Execute action with guarantee that no actions would execute in parallel.
-        /// </summary>
-        /// <param name="action">Action to execute.</param>
-        /// <param name="scheduleSync">Schedule synchronously.</param>
-        /// <returns>Task to wait.</returns>
-        public Task Execute(Action action, bool scheduleSync = false)
-        {
-            return Execute(action, CancellationToken.None, TaskScheduler.Current, scheduleSync);
+            var tcs = new TaskCompletionSource<Nothing>();
+            var cancel = new TaskCompletionSource<Nothing>();
+            cancellationToken.Register(() => cancel.TrySetCanceled());
+            var oldTask = Interlocked.Exchange(ref _currentTask, tcs.Task);
+            try
+            {
+                await Task.WhenAny(oldTask, cancel.Task);
+                await action;
+            }
+            finally
+            {
+                tcs.SetResult(Nothing.Value);
+            }
         }
     }
 }

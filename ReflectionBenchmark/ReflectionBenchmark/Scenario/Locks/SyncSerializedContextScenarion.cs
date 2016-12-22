@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Ipatov.Async;
 using ReflectionBenchmark.Callable;
@@ -30,7 +31,7 @@ namespace ReflectionBenchmark.Locks
                 {
                     callable.Run();
                     callable.RunWithArgs(i1, "");
-                }, true);
+                }, CancellationToken.None);
             }
             var ticks2 = Environment.TickCount;
             return new BenchmarkResult() { RunCount = Consts.RunCount * 1, Milliseconds = ticks2 - ticks1 };
