@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Ipatov.Async;
 using ReflectionBenchmark.Callable;
 using ReflectionBenchmark.DynamicCall;
 
 namespace ReflectionBenchmark.Locks
 {
     /// <summary>
-    /// Task await call
+    /// Task call
     /// </summary>
-    public class AwaitTaskCallScenario : IScenario
+    public class AsyncSerializedContextScenarion : IScenario
     {
-        public string ScenarioName => "Task tcs call with await";
+        public string ScenarioName => "Task async serialized task context";
 
         public Task<BenchmarkResult> DoBenchmark()
         {
@@ -21,13 +22,15 @@ namespace ReflectionBenchmark.Locks
         {
             var callable = new CallableClass();
             var ticks1 = Environment.TickCount;
+            var context = new ExecutionSerializeContext();
             for (var i = 0; i < Consts.RunCount * 100; i++)
             {
-                var tcs = new TaskCompletionSource<bool>();
-                callable.Run();
-                callable.RunWithArgs(i, "");
-                tcs.SetResult(true);
-                await tcs.Task;
+                var i1 = i;
+                await context.Execute(() =>
+                {
+                    callable.Run();
+                    callable.RunWithArgs(i1, "");
+                }, false);
             }
             var ticks2 = Environment.TickCount;
             return new BenchmarkResult() { RunCount = Consts.RunCount * 1, Milliseconds = ticks2 - ticks1 };
