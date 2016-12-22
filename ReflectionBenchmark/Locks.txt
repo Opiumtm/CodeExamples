@@ -1,0 +1,12 @@
+Scenario set "Locked calls"
+=======================================================
+.NET direct call: run count = 100000000, totalTime(ms) = 219, time per run(microsec) = 0.0022
+Monitor locked call: run count = 100000000, totalTime(ms) = 8391, time per run(microsec) = 0.0839, % to baseline = 3831.51%
+Reader lock call: run count = 100000000, totalTime(ms) = 2890, time per run(microsec) = 0.0289, % to baseline = 1319.63%
+Writer lock call: run count = 100000000, totalTime(ms) = 2813, time per run(microsec) = 0.0281, % to baseline = 1284.47%
+Mutex lock call: run count = 10000000, totalTime(ms) = 32016, time per run(microsec) = 3.2016, % to baseline = 146191.78%
+Event lock call: run count = 10000000, totalTime(ms) = 29468, time per run(microsec) = 2.9468, % to baseline = 134557.08%
+Spin locked call: run count = 100000000, totalTime(ms) = 4985, time per run(microsec) = 0.0499, % to baseline = 2276.26%
+Task tcs call: run count = 10000000, totalTime(ms) = 9234, time per run(microsec) = 0.9234, % to baseline = 42164.38%
+Task tcs call with await: run count = 10000000, totalTime(ms) = 10016, time per run(microsec) = 1.0016, % to baseline = 45735.16%
+

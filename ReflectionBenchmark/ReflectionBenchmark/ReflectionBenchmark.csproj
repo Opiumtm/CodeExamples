@@ -119,6 +119,14 @@
     <Compile Include="Scenario\DynamicCall\InterfaceCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionDelegateCallScenario.cs" />
+    <Compile Include="Scenario\Locks\EventLockedCallScenario.cs" />
+    <Compile Include="Scenario\Locks\LockedCallScenario.cs" />
+    <Compile Include="Scenario\Locks\LockedCallScenarioSet.cs" />
+    <Compile Include="Scenario\Locks\MutexLockedCallScenario.cs" />
+    <Compile Include="Scenario\Locks\ReaderLockedCallScenario.cs" />
+    <Compile Include="Scenario\Locks\SpinLockedCallScenario.cs" />
+    <Compile Include="Scenario\Locks\TaskCallScenario.cs" />
+    <Compile Include="Scenario\Locks\WriterLockedCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\CppNativeCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeBackCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeCallScenario.cs" />

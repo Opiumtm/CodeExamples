@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ReflectionBenchmark.Algorithms;
 using ReflectionBenchmark.DynamicCall;
+using ReflectionBenchmark.Locks;
 using ReflectionBenchmark.NativeCall;
 using ReflectionBenchmark.WeakEvents;
 
@@ -95,6 +96,11 @@ namespace ReflectionBenchmark
         private void WeakEvents_OnClick(object sender, RoutedEventArgs e)
         {
             RunScenarioSet(new WeakChannelScenarioSet());
+        }
+
+        private void LockedCalls_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new LockedCallScenarioSet());
         }
     }
 }
