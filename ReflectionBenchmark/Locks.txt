@@ -10,3 +10,16 @@ Spin locked call: run count = 100000000, totalTime(ms) = 4985, time per run(micr
 Task tcs call: run count = 10000000, totalTime(ms) = 9234, time per run(microsec) = 0.9234, % to baseline = 42164.38%
 Task tcs call with await: run count = 10000000, totalTime(ms) = 10016, time per run(microsec) = 1.0016, % to baseline = 45735.16%
 
+Scenario set "Locked calls"
+=======================================================
+.NET direct call: run count = 100000000, totalTime(ms) = 203, time per run(microsec) = 0.0020
+Monitor locked call: run count = 100000000, totalTime(ms) = 8500, time per run(microsec) = 0.0850, % to baseline = 4187.19%
+Reader lock call: run count = 100000000, totalTime(ms) = 2875, time per run(microsec) = 0.0288, % to baseline = 1416.26%
+Writer lock call: run count = 100000000, totalTime(ms) = 3031, time per run(microsec) = 0.0303, % to baseline = 1493.10%
+Mutex lock call: run count = 10000000, totalTime(ms) = 31406, time per run(microsec) = 3.1406, % to baseline = 154709.36%
+Event lock call: run count = 10000000, totalTime(ms) = 29063, time per run(microsec) = 2.9063, % to baseline = 143167.49%
+Spin locked call: run count = 100000000, totalTime(ms) = 4937, time per run(microsec) = 0.0494, % to baseline = 2432.02%
+Spin locked call (no barrier): run count = 100000000, totalTime(ms) = 4485, time per run(microsec) = 0.0449, % to baseline = 2209.36%
+Task tcs call: run count = 10000000, totalTime(ms) = 9000, time per run(microsec) = 0.9000, % to baseline = 44334.98%
+Task tcs call with await: run count = 10000000, totalTime(ms) = 9688, time per run(microsec) = 0.9688, % to baseline = 47724.14%
+

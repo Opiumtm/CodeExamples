@@ -18,6 +18,7 @@ namespace ReflectionBenchmark.Locks
             new MutexLockedCallScenario(),
             new EventLockedCallScenario(),
             new SpinLockedCallScenario(),
+            new SpinLockedNoBarrierCallScenario(), 
             new TaskCallScenario(),
             new AwaitTaskCallScenario(), 
         };

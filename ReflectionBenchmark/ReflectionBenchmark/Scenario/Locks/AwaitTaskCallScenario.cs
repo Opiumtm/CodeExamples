@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using ReflectionBenchmark.Callable;
 using ReflectionBenchmark.DynamicCall;
@@ -7,19 +6,18 @@ using ReflectionBenchmark.DynamicCall;
 namespace ReflectionBenchmark.Locks
 {
     /// <summary>
-    /// Task call
+    /// Task await call
     /// </summary>
-    public class TaskCallScenario : IScenario
+    public class AwaitTaskCallScenario : IScenario
     {
-        public string ScenarioName => "Task tcs call";
+        public string ScenarioName => "Task tcs call with await";
 
-        public async Task<BenchmarkResult> DoBenchmark()
+        public Task<BenchmarkResult> DoBenchmark()
         {
-            var task = Task.Factory.StartNew(RunBenchmark);
-            return await task;
+            return RunBenchmark();
         }
 
-        private BenchmarkResult RunBenchmark()
+        private async Task<BenchmarkResult> RunBenchmark()
         {
             var callable = new CallableClass();
             var ticks1 = Environment.TickCount;
@@ -29,7 +27,7 @@ namespace ReflectionBenchmark.Locks
                 callable.Run();
                 callable.RunWithArgs(i, "");
                 tcs.SetResult(true);
-                tcs.Task.Wait();
+                await tcs.Task;
             }
             var ticks2 = Environment.TickCount;
             return new BenchmarkResult() { RunCount = Consts.RunCount * 10, Milliseconds = ticks2 - ticks1 };
