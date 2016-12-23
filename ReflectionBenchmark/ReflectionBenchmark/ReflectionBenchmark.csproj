@@ -95,8 +95,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ExternalSource\Ipatov.Async\ExecutionSerializeContext.cs" />
-    <Compile Include="ExternalSource\Ipatov.Async\Nothing.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -121,7 +119,6 @@
     <Compile Include="Scenario\DynamicCall\InterfaceCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionDelegateCallScenario.cs" />
-    <Compile Include="Scenario\Locks\AsyncSerializedContextScenarion.cs" />
     <Compile Include="Scenario\Locks\AwaitTaskCallScenario.cs" />
     <Compile Include="Scenario\Locks\EventLockedCallScenario.cs" />
     <Compile Include="Scenario\Locks\LockedCallScenario.cs" />
@@ -130,7 +127,6 @@
     <Compile Include="Scenario\Locks\ReaderLockedCallScenario.cs" />
     <Compile Include="Scenario\Locks\SpinLockedCallScenario.cs" />
     <Compile Include="Scenario\Locks\SpinLockedNoBarrierCallScenario.cs" />
-    <Compile Include="Scenario\Locks\SyncSerializedContextScenarion.cs" />
     <Compile Include="Scenario\Locks\TaskCallScenario.cs" />
     <Compile Include="Scenario\Locks\WriterLockedCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\CppNativeCallScenario.cs" />

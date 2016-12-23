@@ -21,7 +21,6 @@ namespace ReflectionBenchmark.Locks
             new SpinLockedNoBarrierCallScenario(), 
             new TaskCallScenario(),
             new AwaitTaskCallScenario(), 
-            new SyncSerializedContextScenarion(), 
         };
 
         /// <summary>
