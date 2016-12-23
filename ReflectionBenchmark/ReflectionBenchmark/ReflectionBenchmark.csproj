@@ -104,6 +104,10 @@
     <Compile Include="Scenario\Algorithms\BubbleSortDotnetScenario.cs" />
     <Compile Include="Scenario\Algorithms\BubbleSortNativeScenario.cs" />
     <Compile Include="Scenario\Algorithms\DotNetBubbleSortRunner.cs" />
+    <Compile Include="Scenario\AsyncPrimitives\AsyncPrimitivesScenarioSet.cs" />
+    <Compile Include="Scenario\AsyncPrimitives\AsyncSignalScenario.cs" />
+    <Compile Include="Scenario\AsyncPrimitives\AsyncSignalScenarioBase.cs" />
+    <Compile Include="Scenario\AsyncPrimitives\AutoResetEventScenario.cs" />
     <Compile Include="Scenario\BenchmarkResult.cs" />
     <Compile Include="Scenario\Callable\CallableClass.cs" />
     <Compile Include="Scenario\DynamicCall\CallableCaseDispatcher.cs" />
@@ -179,7 +183,11 @@
       <Name>NativeComponent</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Ipatov.Async">
+      <HintPath>..\ExternalLibs\Ipatov.Async.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

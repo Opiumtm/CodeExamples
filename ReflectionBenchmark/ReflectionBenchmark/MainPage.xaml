@@ -20,6 +20,7 @@
             <Button Margin="2.5" Click="BubbleSort_OnClick">Bubble sort</Button>
             <Button Margin="2.5" Click="WeakEvents_OnClick">Weak events</Button>
             <Button Margin="2.5" Click="LockedCalls_OnClick">Locked calls</Button>
+            <Button Margin="2.5" Click="Async_OnClick">Ipatov.Async</Button>
         </VariableSizedWrapGrid>
     </Grid>
 </Page>

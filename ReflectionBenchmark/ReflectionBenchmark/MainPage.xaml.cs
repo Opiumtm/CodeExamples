@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ReflectionBenchmark.Algorithms;
+using ReflectionBenchmark.AsyncPrimitives;
 using ReflectionBenchmark.DynamicCall;
 using ReflectionBenchmark.Locks;
 using ReflectionBenchmark.NativeCall;
@@ -101,6 +102,11 @@ namespace ReflectionBenchmark
         private void LockedCalls_OnClick(object sender, RoutedEventArgs e)
         {
             RunScenarioSet(new LockedCallScenarioSet());
+        }
+
+        private void Async_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new AsyncPrimitivesScenarioSet());
         }
     }
 }
