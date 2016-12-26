@@ -104,7 +104,9 @@
     <Compile Include="Scenario\Algorithms\BubbleSortDotnetScenario.cs" />
     <Compile Include="Scenario\Algorithms\BubbleSortNativeScenario.cs" />
     <Compile Include="Scenario\Algorithms\DotNetBubbleSortRunner.cs" />
+    <Compile Include="Scenario\AsyncPrimitives\AsyncLockScenario.cs" />
     <Compile Include="Scenario\AsyncPrimitives\AsyncPrimitivesScenarioSet.cs" />
+    <Compile Include="Scenario\AsyncPrimitives\AsyncRegionScenarioBase.cs" />
     <Compile Include="Scenario\AsyncPrimitives\AsyncSignalScenario.cs" />
     <Compile Include="Scenario\AsyncPrimitives\AsyncSignalScenarioBase.cs" />
     <Compile Include="Scenario\AsyncPrimitives\AutoResetEventScenario.cs" />

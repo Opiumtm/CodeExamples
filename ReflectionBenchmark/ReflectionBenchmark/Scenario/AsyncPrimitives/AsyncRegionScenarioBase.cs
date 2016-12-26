@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Windows.System.Threading;
 using Ipatov.Async.Primitives;
 using ReflectionBenchmark.Callable;
 
 namespace ReflectionBenchmark.AsyncPrimitives
 {
     /// <summary>
-    /// Async signal test base.
+    /// Async region scenario set.
     /// </summary>
-    /// <typeparam name="T">Async signal type.</typeparam>
-    public abstract class AsyncSignalScenarioBase<T> : IScenario where T : IAsyncSignal
+    /// <typeparam name="T">Region type.</typeparam>
+    public abstract class AsyncRegionScenarioBase<T> : IScenario where T : IAsyncWaitRegion
     {
         /// <summary>
         /// Scenario name.
@@ -25,44 +24,41 @@ namespace ReflectionBenchmark.AsyncPrimitives
         public async Task<BenchmarkResult> DoBenchmark()
         {
             var callable = new CallableClass();
-            var primitive = CreateAsyncPrimitive();
+            var region = CreateRegion();
             try
             {
                 var ticks1 = Environment.TickCount;
                 for (var i = 0; i < RunCount; i++)
                 {
-                    primitive.Set();
-                    await primitive.Wait(CancellationToken.None);
-                    callable.Run();
-                    callable.RunWithArgs(i, "");
+                    using (await region.WaitRegion(CancellationToken.None))
+                    {
+                        callable.Run();
+                        callable.RunWithArgs(i, "");
+                    }
                 }
                 var ticks2 = Environment.TickCount;
                 return new BenchmarkResult() { RunCount = RunCount, Milliseconds = ticks2 - ticks1 };
             }
             finally
             {
-                DisposeAsyncPrimitive(primitive);
+                DisposeRegion(region);
             }
+        }
+
+        /// <summary>
+        /// Create async region.
+        /// </summary>
+        /// <returns>Region.</returns>
+        protected abstract T CreateRegion();
+
+        private void DisposeRegion(T region)
+        {
+            (region as IDisposable)?.Dispose();
         }
 
         /// <summary>
         /// Run count.
         /// </summary>
         protected abstract int RunCount { get; }
-
-        /// <summary>
-        /// Create async primitive.
-        /// </summary>
-        /// <returns>Async primitive.</returns>
-        protected abstract T CreateAsyncPrimitive();
-
-        /// <summary>
-        /// Dispose async primitive.
-        /// </summary>
-        /// <param name="primitive">Primitive.</param>
-        protected virtual void DisposeAsyncPrimitive(T primitive)
-        {
-            (primitive as IDisposable)?.Dispose();
-        }
     }
 }

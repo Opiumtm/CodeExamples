@@ -13,7 +13,7 @@ namespace ReflectionBenchmark.AsyncPrimitives
         /// <summary>
         /// Run count.
         /// </summary>
-        protected override int RunCount => Consts.RunCount;
+        protected override int RunCount => Consts.RunCount * 10;
 
         /// <summary>
         /// Create async primitive.

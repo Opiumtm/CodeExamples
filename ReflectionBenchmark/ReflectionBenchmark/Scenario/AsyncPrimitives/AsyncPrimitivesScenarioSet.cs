@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ReflectionBenchmark.Locks;
 using ReflectionBenchmark.StaticCall;
 
 namespace ReflectionBenchmark.AsyncPrimitives
@@ -14,6 +15,8 @@ namespace ReflectionBenchmark.AsyncPrimitives
         {
             new AsyncSignalScenario(), 
             new AutoResetEventScenario(),
+            new AsyncLockScenario(),
+            new LockedCallScenario(), 
         };
 
         /// <summary>
