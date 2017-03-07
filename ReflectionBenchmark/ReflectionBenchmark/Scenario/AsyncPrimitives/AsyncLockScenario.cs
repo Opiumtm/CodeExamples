@@ -15,6 +15,6 @@ namespace ReflectionBenchmark.AsyncPrimitives
 
         protected override AsyncLock CreateRegion() => new AsyncLock();
 
-        protected override int RunCount => Consts.RunCount * 10;
+        protected override int RunCount => Consts.RunCount;
     }
 }

@@ -31,7 +31,7 @@ namespace ReflectionBenchmark.AsyncPrimitives
                 var ticks1 = Environment.TickCount;
                 for (var i = 0; i < RunCount; i++)
                 {
-                    primitive.Set();
+                    await primitive.Set();
                     await primitive.Wait(CancellationToken.None);
                     callable.Run();
                     callable.RunWithArgs(i, "");
