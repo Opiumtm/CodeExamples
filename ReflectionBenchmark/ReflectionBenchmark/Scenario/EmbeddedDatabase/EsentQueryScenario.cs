@@ -60,22 +60,25 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// <returns>Iteration count.</returns>
         protected override int DoBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings)
         {
-            var random = new Random();
-            Api.JetSetCurrentIndex(sesid, tableid, nameof(DataRow.DoubleValue));
-            for (var i = 0; i < DatabaseTestConsts.QueryCount; i++)
+            using (var transaction = new Transaction(sesid))
             {
-                double sum = 0.0;
-                Api.MakeKey(sesid, tableid, random.NextDouble(), MakeKeyGrbit.NewKey);
-                if (Api.TrySeek(sesid, tableid, SeekGrbit.SeekGT))
+                var random = new Random();
+                Api.JetSetCurrentIndex(sesid, tableid, nameof(DataRow.DoubleValue));
+                for (var i = 0; i < DatabaseTestConsts.QueryCount; i++)
                 {
-                    do
+                    double sum = 0.0;
+                    Api.MakeKey(sesid, tableid, random.NextDouble(), MakeKeyGrbit.NewKey);
+                    if (Api.TrySeek(sesid, tableid, SeekGrbit.SeekGT))
                     {
-                        var row = EsentHelpers.LoadRow(sesid, tableid, ref mappings);
-                        sum += row.DoubleValue;
-                    } while (Api.TryMoveNext(sesid, tableid));
+                        do
+                        {
+                            var row = EsentHelpers.LoadRow(sesid, tableid, ref mappings);
+                            sum += row.DoubleValue;
+                        } while (Api.TryMoveNext(sesid, tableid));
+                    }
                 }
+                return DatabaseTestConsts.QueryCount;
             }
-            return DatabaseTestConsts.QueryCount;
         }
     }
 }

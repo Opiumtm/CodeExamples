@@ -46,20 +46,23 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// <returns>Iteration count.</returns>
         protected override int DoBenchmark(SqliteConnection db)
         {
-            var random = new Random();
-            for (var i = 0; i < DatabaseTestConsts.QueryCount; i++)
+            using (var transaction = db.BeginTransaction())
             {
-                double sum = 0.0;
-                var command = new SqliteCommand($"SELECT * FROM test WHERE {nameof(DataRow.DoubleValue)} > @Comparand", db);
-                command.Parameters.AddWithValue("@Comparand", random.NextDouble());
-                var reader = command.ExecuteReader();
-                while (reader.Read())
+                var random = new Random();
+                for (var i = 0; i < DatabaseTestConsts.QueryCount; i++)
                 {
-                    var row = SqliteHelpers.LoadRow(reader);
-                    sum += row.DoubleValue;
+                    double sum = 0.0;
+                    var command = new SqliteCommand($"SELECT * FROM test WHERE {nameof(DataRow.DoubleValue)} > @Comparand", db, transaction);
+                    command.Parameters.AddWithValue("@Comparand", random.NextDouble());
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var row = SqliteHelpers.LoadRow(reader);
+                        sum += row.DoubleValue;
+                    }
                 }
+                return DatabaseTestConsts.QueryCount;
             }
-            return DatabaseTestConsts.QueryCount;
         }
     }
 }
