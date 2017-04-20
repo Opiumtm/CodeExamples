@@ -16,7 +16,7 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// </summary>
         /// <param name="db">Databse connection.</param>
         /// <returns>Iteration count.</returns>
-        protected override int DoBenchmark(SqliteConnection db)
+        protected override int DoBenchmark(SqliteConnection db, object data)
         {
             var random = new Random();
             for (var j = 0; j < DatabaseTestConsts.InsertCount / 1000; j++)

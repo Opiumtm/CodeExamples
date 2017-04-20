@@ -30,6 +30,8 @@ namespace ReflectionBenchmark.EmbeddedDatabase
                 new SqliteInsertScenario(), 
                 new EsentQueryScenario(), 
                 new SqliteQueryScenario(), 
+                new EsentPkSeekScenario(), 
+                new SqlitePkSeekScenario(), 
             };
         }
     }

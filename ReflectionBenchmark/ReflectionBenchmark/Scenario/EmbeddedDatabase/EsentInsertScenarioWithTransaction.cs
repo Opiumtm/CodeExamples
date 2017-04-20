@@ -20,8 +20,9 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// <param name="dbid">Database id.</param>
         /// <param name="tableid">Table id.</param>
         /// <param name="mappings">Column mappings.</param>
+        /// <param name="data">Подготовленные данные.</param>
         /// <returns>Iteration count.</returns>
-        protected override int DoBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings)
+        protected override int DoBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings, object data)
         {
             var random = new Random();
             for (var i = 0; i < DatabaseTestConsts.InsertCount; i++)

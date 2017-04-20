@@ -40,9 +40,9 @@ namespace ReflectionBenchmark.EmbeddedDatabase
                     try
                     {
                         SqliteHelpers.InitializeTable(db, "test");
-                        PrepareBenchmark(db);
+                        var data = PrepareBenchmark(db);
                         var ticks1 = Environment.TickCount;
-                        var iterations = DoBenchmark(db);
+                        var iterations = DoBenchmark(db, data);
                         var ticks2 = Environment.TickCount;
                         return new BenchmarkResult() { RunCount = iterations, Milliseconds = ticks2 - ticks1 };
                     }
@@ -58,8 +58,9 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// Prepare benchmark.
         /// </summary>
         /// <param name="db">Database connection.</param>
-        protected virtual void PrepareBenchmark(SqliteConnection db)
+        protected virtual object PrepareBenchmark(SqliteConnection db)
         {
+            return null;
         }
 
         /// <summary>
@@ -67,6 +68,6 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// </summary>
         /// <param name="db">Databse connection.</param>
         /// <returns>Iteration count.</returns>
-        protected abstract int DoBenchmark(SqliteConnection db);
+        protected abstract int DoBenchmark(SqliteConnection db, object data);
     }
 }

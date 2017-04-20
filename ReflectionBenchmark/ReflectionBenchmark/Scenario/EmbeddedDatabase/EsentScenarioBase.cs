@@ -33,9 +33,9 @@ namespace ReflectionBenchmark.EmbeddedDatabase
                         (var tableid, var dbid, var mappings) = EsentHelpers.InitializeDb(session, dbName);
                         try
                         {
-                            PrepareBenchmark(session, dbid, tableid, ref mappings);
+                            var data = PrepareBenchmark(session, dbid, tableid, ref mappings);
                             var ticks1 = Environment.TickCount;
-                            var iterations = DoBenchmark(session, dbid, tableid, ref mappings);
+                            var iterations = DoBenchmark(session, dbid, tableid, ref mappings, data);
                             var ticks2 = Environment.TickCount;
                             return new BenchmarkResult() {RunCount = iterations, Milliseconds = ticks2 - ticks1};
                         }
@@ -59,8 +59,9 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// <param name="dbid">Database id.</param>
         /// <param name="tableid">Table id.</param>
         /// <param name="mappings">Column mappings.</param>
-        protected virtual void PrepareBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings)
-        {            
+        protected virtual object PrepareBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings)
+        {
+            return null;
         }
 
         /// <summary>
@@ -70,7 +71,8 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         /// <param name="dbid">Database id.</param>
         /// <param name="tableid">Table id.</param>
         /// <param name="mappings">Column mappings.</param>
+        /// <param name="data">Подготовленные данные.</param>
         /// <returns>Iteration count.</returns>
-        protected abstract int DoBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings);
+        protected abstract int DoBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings, object data);
     }
 }
