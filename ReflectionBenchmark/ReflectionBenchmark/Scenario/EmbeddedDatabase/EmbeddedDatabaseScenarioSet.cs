@@ -27,6 +27,9 @@ namespace ReflectionBenchmark.EmbeddedDatabase
             {
                 new EsentInsertScenario(),
                 new EsentInsertScenarioWithTransaction(), 
+                new SqliteInsertScenario(), 
+                new EsentQueryScenario(), 
+                new SqliteQueryScenario(), 
             };
         }
     }

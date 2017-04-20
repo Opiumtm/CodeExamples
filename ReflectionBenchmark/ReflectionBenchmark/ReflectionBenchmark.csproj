@@ -130,7 +130,13 @@
     <Compile Include="Scenario\EmbeddedDatabase\EmbeddedDatabaseScenarioSet.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\EsentHelpers.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\EsentInsertScenario.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\EsentInsertScenarioWithTransaction.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\EsentQueryScenario.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\EsentScenarioBase.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\SqliteHelpers.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\SqliteInsertScenario.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\SqliteQueryScenario.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\SqliteScenarioBase.cs" />
     <Compile Include="Scenario\Locks\AwaitTaskCallScenario.cs" />
     <Compile Include="Scenario\Locks\EventLockedCallScenario.cs" />
     <Compile Include="Scenario\Locks\LockedCallScenario.cs" />

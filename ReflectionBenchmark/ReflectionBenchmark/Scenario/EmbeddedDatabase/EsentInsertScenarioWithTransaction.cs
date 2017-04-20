@@ -6,12 +6,12 @@ namespace ReflectionBenchmark.EmbeddedDatabase
     /// <summary>
     /// Esent inserts test.
     /// </summary>
-    public sealed class EsentInsertScenario : EsentScenarioBase
+    public sealed class EsentInsertScenarioWithTransaction : EsentScenarioBase
     {
         /// <summary>
         /// Scenario name.
         /// </summary>
-        public override string ScenarioName => $"ESENT {DatabaseTestConsts.InsertCount} Inserts";
+        public override string ScenarioName => $"ESENT {DatabaseTestConsts.InsertCount} Inserts (individual transactions)";
 
         /// <summary>
         /// Do benchmark.
@@ -24,23 +24,20 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         protected override int DoBenchmark(JET_SESID sesid, JET_DBID dbid, JET_TABLEID tableid, ref EsentColumnMappings mappings)
         {
             var random = new Random();
-            for (var j = 0; j < DatabaseTestConsts.InsertCount / 1000; j++)
+            for (var i = 0; i < DatabaseTestConsts.InsertCount; i++)
             {
                 using (var transaction = new Transaction(sesid))
                 {
                     try
                     {
-                        for (var i = 0; i < 1000; i++)
+                        Api.JetPrepareUpdate(sesid, tableid, JET_prep.Insert);
+                        var dataRow = new DataRow()
                         {
-                            Api.JetPrepareUpdate(sesid, tableid, JET_prep.Insert);
-                            var dataRow = new DataRow()
-                            {
-                                DoubleValue = random.NextDouble(),
-                                StringValue = i.ToString()
-                            };
-                            EsentHelpers.UpdateRow(dataRow, sesid, tableid, ref mappings);
-                            Api.JetUpdate(sesid, tableid);
-                        }
+                            DoubleValue = random.NextDouble(),
+                            StringValue = i.ToString()
+                        };
+                        EsentHelpers.UpdateRow(dataRow, sesid, tableid, ref mappings);
+                        Api.JetUpdate(sesid, tableid);
                     }
                     finally
                     {

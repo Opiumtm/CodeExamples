@@ -9,5 +9,10 @@
         /// Number of inserts.
         /// </summary>
         public const int InsertCount = 10000;
+
+        /// <summary>
+        /// Number of queries.
+        /// </summary>
+        public const int QueryCount = 500;
     }
 }
