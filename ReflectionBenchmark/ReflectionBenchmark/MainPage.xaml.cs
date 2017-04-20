@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using ReflectionBenchmark.Algorithms;
 using ReflectionBenchmark.AsyncPrimitives;
 using ReflectionBenchmark.DynamicCall;
+using ReflectionBenchmark.EmbeddedDatabase;
 using ReflectionBenchmark.Locks;
 using ReflectionBenchmark.NativeCall;
 using ReflectionBenchmark.WeakEvents;
@@ -37,8 +38,12 @@ namespace ReflectionBenchmark
         {
             Log($"Scenario set \"{set.Name}\"");
             Log("=======================================================");
-            BenchmarkResult baseline = await set.BaselineScenario.DoBenchmark();
-            LogResult(set.BaselineScenario.ScenarioName, baseline);
+            BenchmarkResult? baseline = null;
+            if (set.BaselineScenario != null)
+            {
+                baseline = await set.BaselineScenario.DoBenchmark();
+                LogResult(set.BaselineScenario.ScenarioName, baseline.Value);
+            }
             foreach (var scenario in set.GetScenarios())
             {
                 var result = await scenario.DoBenchmark();
@@ -59,14 +64,21 @@ namespace ReflectionBenchmark
             Log($"{name}: run count = {result.RunCount}, totalTime(ms) = {result.Milliseconds}, time per run(microsec) = {msPerRun:F4}");
         }
 
-        private void LogResult(string name, BenchmarkResult result, BenchmarkResult baseline)
+        private void LogResult(string name, BenchmarkResult result, BenchmarkResult? baseline)
         {
-            double msTotal = result.Milliseconds;
-            double msBaseTotal = baseline.Milliseconds;
-            double msPerRun = msTotal / result.RunCount * 1000;
-            double msBasePerRun = msBaseTotal / baseline.RunCount * 1000;
-            double percent = msPerRun/Math.Max(msBasePerRun, 1E-10) * 100.0;
-            Log($"{name}: run count = {result.RunCount}, totalTime(ms) = {result.Milliseconds}, time per run(microsec) = {msPerRun:F4}, % to baseline = {percent:F2}%");
+            if (baseline != null)
+            {
+                double msTotal = result.Milliseconds;
+                double msBaseTotal = baseline.Value.Milliseconds;
+                double msPerRun = msTotal / result.RunCount * 1000;
+                double msBasePerRun = msBaseTotal / baseline.Value.RunCount * 1000;
+                double percent = msPerRun / Math.Max(msBasePerRun, 1E-10) * 100.0;
+                Log($"{name}: run count = {result.RunCount}, totalTime(ms) = {result.Milliseconds}, time per run(microsec) = {msPerRun:F4}, % to baseline = {percent:F2}%");
+            }
+            else
+            {
+                LogResult(name, result);
+            }
         }
 
         private void Log(string message)
@@ -107,6 +119,11 @@ namespace ReflectionBenchmark
         private void Async_OnClick(object sender, RoutedEventArgs e)
         {
             RunScenarioSet(new AsyncPrimitivesScenarioSet());
+        }
+
+        private void EmbeddedDb_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new EmbeddedDatabaseScenarioSet());
         }
     }
 }

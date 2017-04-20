@@ -26,10 +26,9 @@ namespace ReflectionBenchmark.EmbeddedDatabase
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void UpdateRow(DataRow row, JET_SESID sesid, JET_TABLEID tableid, ref EsentColumnMappings mappings)
         {
-            Api.SetColumns(sesid, tableid, 
-                new Int32ColumnValue() {  Columnid = mappings.Id, Value = row.Id },
+            Api.SetColumns(sesid, tableid,
                 new StringColumnValue() { Columnid = mappings.StringValue, Value = row.StringValue },
-                new DoubleColumnValue() { Columnid = mappings.DoubleValue, Value = row.DoubleValue}
+                new DoubleColumnValue() { Columnid = mappings.DoubleValue, Value = row.DoubleValue }
             );
         }
 
@@ -65,9 +64,20 @@ namespace ReflectionBenchmark.EmbeddedDatabase
             return (tableid, dbid, mappings);
         }
 
-        public static (Instance instance, Session session) OpenSession()
+        public static (Instance instance, Session session) OpenSession(string dbFolder)
         {
-            Instance instance = new Instance("testinstance", "testinstance");
+            Instance instance = new Instance("testinstance", "testinstance")
+            {
+                Parameters =
+                {
+                   SystemDirectory = dbFolder,
+                   TempDirectory = dbFolder,
+                   LogFileDirectory = dbFolder,
+                   Recovery = true,
+                   CircularLog = false,
+                }
+            };
+            instance.Init();
             Session session = new Session(instance);
             return (instance, session);
         }

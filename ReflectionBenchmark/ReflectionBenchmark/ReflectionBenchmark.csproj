@@ -125,8 +125,12 @@
     <Compile Include="Scenario\DynamicCall\InterfaceCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionDelegateCallScenario.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\DatabaseTestConsts.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\DataRow.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\EmbeddedDatabaseScenarioSet.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\EsentHelpers.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\EsentInsertScenario.cs" />
+    <Compile Include="Scenario\EmbeddedDatabase\EsentScenarioBase.cs" />
     <Compile Include="Scenario\Locks\AwaitTaskCallScenario.cs" />
     <Compile Include="Scenario\Locks\EventLockedCallScenario.cs" />
     <Compile Include="Scenario\Locks\LockedCallScenario.cs" />
