@@ -20,7 +20,8 @@ namespace ReflectionBenchmark.DynamicCall
 
         private readonly IScenario[] _scenarios = new IScenario[]
         {
-            new InterfaceCallScenario(), 
+            new InterfaceCallScenario(),
+            new StructInterfaceCallScenario(), 
             new ReflectionCallScenario(),
             new ReflectionDelegateCallScenario(), 
             new DynamicCallScenario(), 

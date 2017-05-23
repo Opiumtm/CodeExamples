@@ -25,6 +25,18 @@ namespace NativeComponent
 		void Invoke(INativeCallable^ callable, int count);
 	};
 
+	public interface class IWinmdNativeCaller
+	{
+	public:
+		void Invoke(DotNetComponent::IDotnetCallableInterface^ callable, int count);
+	};
+
+	public interface class IWinmdNativeCaller2
+	{
+	public:
+		void Invoke(DotNetComponent::DotnetCallable^ callable, int count);
+	};
+
 	public ref class NativeCaller sealed : public INativeCaller
 	{
 	private:
@@ -32,6 +44,16 @@ namespace NativeComponent
 	public:
 		NativeCaller();
 		virtual void Invoke(INativeCallable^ callable, int count);
+	};
+
+	public ref class WinmdNativeCaller sealed : public IWinmdNativeCaller, IWinmdNativeCaller2
+	{
+	private:
+		int counter = 0;
+	public:
+		WinmdNativeCaller();
+		virtual void Invoke(DotNetComponent::IDotnetCallableInterface^ callable, int count);
+		virtual void Invoke(DotNetComponent::DotnetCallable^ callable, int count);
 	};
 
 	public interface class IBenchmarkRunner

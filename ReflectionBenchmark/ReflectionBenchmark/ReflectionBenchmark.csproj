@@ -112,6 +112,7 @@
     <Compile Include="Scenario\AsyncPrimitives\AutoResetEventScenario.cs" />
     <Compile Include="Scenario\BenchmarkResult.cs" />
     <Compile Include="Scenario\Callable\CallableClass.cs" />
+    <Compile Include="Scenario\Callable\CallableStruct.cs" />
     <Compile Include="Scenario\DynamicCall\CallableCaseDispatcher.cs" />
     <Compile Include="Scenario\DynamicCall\CallableDictionaryDispatcher.cs" />
     <Compile Include="Scenario\DynamicCall\Consts.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Scenario\DynamicCall\InterfaceCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\ReflectionDelegateCallScenario.cs" />
+    <Compile Include="Scenario\DynamicCall\StructInterfaceCallScenario.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\DatabaseTestConsts.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\DataRow.cs" />
     <Compile Include="Scenario\EmbeddedDatabase\EmbeddedDatabaseScenarioSet.cs" />
@@ -152,10 +154,14 @@
     <Compile Include="Scenario\NativeCall\NativeCallScenario.cs" />
     <Compile Include="Scenario\NativeCall\NativeCallScenarioSet.cs" />
     <Compile Include="Scenario\NativeCall\NativeVsDotnetCallScenarioSet.cs" />
+    <Compile Include="Scenario\NativeCall\StructNativeBackCallScenario.cs" />
+    <Compile Include="Scenario\NativeCall\WinmdClassNativeBackCallScenario.cs" />
+    <Compile Include="Scenario\NativeCall\WinmdInterfaceNativeBackCallScenario.cs" />
     <Compile Include="Scenario\StaticCall\SimpleCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\SwitchDispatchCallScenario.cs" />
     <Compile Include="Scenario\IScenario.cs" />
     <Compile Include="Scenario\IScenarioSet.cs" />
+    <Compile Include="Scenario\StaticCall\WinmdSimpleCallScenario.cs" />
     <Compile Include="Scenario\WeakEvents\DvachBrowserWeakEventChannelScenario.cs" />
     <Compile Include="Scenario\WeakEvents\DvachBrowser\WeakEventChannel.cs" />
     <Compile Include="Scenario\WeakEvents\IWeakEventCallback.cs" />
@@ -198,6 +204,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="DotNetComponent, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibs\DotNetComponent.winmd</HintPath>
+    </Reference>
     <Reference Include="Ipatov.Async">
       <HintPath>..\ExternalLibs\Ipatov.Async.dll</HintPath>
     </Reference>
