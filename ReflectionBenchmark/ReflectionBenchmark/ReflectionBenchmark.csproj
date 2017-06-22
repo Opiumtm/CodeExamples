@@ -119,6 +119,7 @@
     <Compile Include="Scenario\DynamicCall\CallableCaseDispatcher.cs" />
     <Compile Include="Scenario\DynamicCall\CallableDictionaryDispatcher.cs" />
     <Compile Include="Scenario\DynamicCall\Consts.cs" />
+    <Compile Include="Scenario\DynamicCall\DelegateCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\DictionaryDispatchCallScenario.cs" />
     <Compile Include="Scenario\DynamicCall\DispatchCallScenarioBase.cs" />
     <Compile Include="Scenario\DynamicCall\DynamicCallScenario.cs" />

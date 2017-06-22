@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using ReflectionBenchmark.Callable;
-using ReflectionBenchmark.DynamicCall;
 
-namespace ReflectionBenchmark.StaticCall
+namespace ReflectionBenchmark.DynamicCall
 {
-    /// <summary>
-    /// Simple call scenario.
-    /// </summary>
-    public sealed class SimpleCallScenario : IScenario
+    public class DelegateCallScenario : IScenario
     {
-        public string ScenarioName => ".NET direct call";
+        public string ScenarioName => ".NET delegate call";
 
         public async Task<BenchmarkResult> DoBenchmark()
         {
@@ -22,22 +18,22 @@ namespace ReflectionBenchmark.StaticCall
         {
             var callable = new CallableClass();
             var ticks1 = Environment.TickCount;
-            for (var i = 0; i < Consts.RunCount*100; i++)
+            var d1 = new Func<int>(callable.Run);
+            var d2 = new Func<int, string, int>(callable.RunWithArgs);
+            for (var i = 0; i < Consts.RunCount * 100; i++)
             {
-                callable.Run();
-                callable.RunWithArgs(i, "");
+                d1();
+                d2(i, "");
             }
             var ticks2 = Environment.TickCount;
-            return new BenchmarkResult() { RunCount = Consts.RunCount*100, Milliseconds = ticks2 - ticks1};
+            return new BenchmarkResult() { RunCount = Consts.RunCount * 100, Milliseconds = ticks2 - ticks1 };
         }
+
     }
 
-    /// <summary>
-    /// Simple call scenario.
-    /// </summary>
-    public sealed class SimpleCallScenarioNoInline : IScenario
+    public class StaticDelegateCallScenario : IScenario
     {
-        public string ScenarioName => ".NET direct call no inline";
+        public string ScenarioName => ".NET static delegate call";
 
         public async Task<BenchmarkResult> DoBenchmark()
         {
@@ -47,16 +43,18 @@ namespace ReflectionBenchmark.StaticCall
 
         private BenchmarkResult RunBenchmark()
         {
-            var callable = new CallableClassNoInline();
             var ticks1 = Environment.TickCount;
+            var d1 = new Func<int>(CallableClassStatic.Run);
+            var d2 = new Func<int, string, int>(CallableClassStatic.RunWithArgs);
             for (var i = 0; i < Consts.RunCount * 100; i++)
             {
-                callable.Run();
-                callable.RunWithArgs(i, "");
+                d1();
+                d2(i, "");
             }
             var ticks2 = Environment.TickCount;
             return new BenchmarkResult() { RunCount = Consts.RunCount * 100, Milliseconds = ticks2 - ticks1 };
         }
+
     }
 
 }

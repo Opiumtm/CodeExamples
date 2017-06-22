@@ -26,7 +26,10 @@ namespace ReflectionBenchmark.DynamicCall
             new ReflectionDelegateCallScenario(), 
             new DynamicCallScenario(), 
             new SwitchDispatchCallScenario(), 
-            new DictionaryDispatchCallScenario(), 
+            new DictionaryDispatchCallScenario(),
+            new SimpleCallScenarioNoInline(), 
+            new DelegateCallScenario(),
+            new StaticDelegateCallScenario(), 
         };
 
         /// <summary>
