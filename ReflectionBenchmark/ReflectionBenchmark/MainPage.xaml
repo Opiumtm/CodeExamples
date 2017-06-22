@@ -20,6 +20,7 @@
             <Button Margin="2.5" Click="BubbleSort_OnClick">Bubble sort</Button>
             <Button Margin="2.5" Click="LockedCalls_OnClick">Locked calls</Button>
             <Button Margin="2.5" Click="EmbeddedDb_OnClick">Embedded DB</Button>
+            <Button Margin="2.5" Click="BranchHypo_OnClick">Branch Hypo</Button>
         </VariableSizedWrapGrid>
     </Grid>
 </Page>

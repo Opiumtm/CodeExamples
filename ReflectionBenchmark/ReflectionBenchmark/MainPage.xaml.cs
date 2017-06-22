@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ReflectionBenchmark.Algorithms;
 using ReflectionBenchmark.AsyncPrimitives;
+using ReflectionBenchmark.BranchHypo;
 using ReflectionBenchmark.DynamicCall;
 using ReflectionBenchmark.EmbeddedDatabase;
 using ReflectionBenchmark.Locks;
@@ -124,6 +125,11 @@ namespace ReflectionBenchmark
         private void EmbeddedDb_OnClick(object sender, RoutedEventArgs e)
         {
             RunScenarioSet(new EmbeddedDatabaseScenarioSet());
+        }
+
+        private void BranchHypo_OnClick(object sender, RoutedEventArgs e)
+        {
+            RunScenarioSet(new BranchHypoScenarioSet());
         }
     }
 }

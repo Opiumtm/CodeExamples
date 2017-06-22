@@ -13,6 +13,6 @@
         /// <summary>
         /// Number of queries.
         /// </summary>
-        public const int QueryCount = 500;
+        public const int QueryCount = 1000;
     }
 }

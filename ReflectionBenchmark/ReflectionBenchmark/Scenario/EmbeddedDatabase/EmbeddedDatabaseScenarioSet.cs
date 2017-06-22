@@ -29,6 +29,7 @@ namespace ReflectionBenchmark.EmbeddedDatabase
                 new EsentInsertScenarioWithTransaction(), 
                 new SqliteInsertScenario(), 
                 new EsentQueryScenario(), 
+                new EsentQueryScenarioWithTempTable(), 
                 new SqliteQueryScenario(), 
                 new EsentPkSeekScenario(), 
                 new SqlitePkSeekScenario(), 
